@@ -1,11 +1,9 @@
-body {
+/* Basic reset */
+body,
+html {
     margin: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    padding: 0;
+    height: 100%;
 }
 
 #drop-zone {
@@ -25,29 +23,32 @@ canvas {
     left: 0;
 }
 
-/* Basic reset */
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
+/* TEXT */
 
+h1 {
+    font-family: "puffin-arcade-nerf", sans-serif;
+    font-weight: 800;
+    line-height: 5vh;
+    font-size: 5vh;
+    font-style: normal;
+    color: #733FED;
 }
 
-/* Customization Panel */
-#customization-panel {
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    z-index: 10;
+h2 {
+    font-family: "argent-pixel-cf", sans-serif;
+    font-weight: 400;
+    font-size: 2vh;
+    font-style: normal;
+    color: #733FED;
 }
+
+p {
+    font-family: "dico-mono", mono;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+}
+
 
 /* Canvas (Main Pattern Area) */
 #pattern-canvas {
@@ -63,7 +64,7 @@ html {
 #drop-zone {
     width: 200px;
     height: 200px;
-    border: 2px dashed #ccc;
+    border: 2px dashed #733FED;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,4 +74,121 @@ html {
     transform: translate(-50%, -50%);
     background-color: #fff;
     z-index: 5;
+}
+
+/* Customization Panel */
+#customization-panel {
+    width: 15vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4f4f4;
+    stroke: #733FED;
+    box-shadow: 2px 0 5px #733FED;
+    overflow-y: auto;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/* Nav button options*/
+.rect {
+    width: 100%;
+    height: 5vh;
+    background-color: #733FED;
+}
+
+
+.bar {
+    width: 100%;
+    height: 5vh;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    border-top: 2px solid #733FED;
+
+    /* Only add top border */
+}
+
+
+.bar:last-child {
+    border-bottom: 2px solid #733FED;
+    margin-top: -2px;
+    /* Add bottom border to the last bar */
+}
+
+.bar:hover {
+    background-color: #733FED;
+    color: #f4f4f4;
+}
+
+/* Remove default styles from <a> */
+a {
+
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit text color from parent */
+    display: block;
+    /* Ensure <a> takes up full width */
+    width: 100%;
+    /* Make <a> span the full width */
+}
+
+
+
+/* BLOG */
+
+.blog {
+    position: absolute;
+    left: 15vw;
+    padding: 20vh;
+    padding-top: 0px;
+
+    /* border: 2px solid #733FED; */
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tumb {
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+    align-items: flex-start;
+}
+
+.description {
+    width: 50%;
+    height: 50%;
+    /* border: 2px solid #733FED; */
+}
+
+.posts {
+    width: 30%;
+    height: 80%;
+    border: 2px solid #733FED;
+    border-radius: 1vw;
+    padding: 10px;
+
+    /* overflow: auto; */
+
+}
+
+.posts img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    /* Apply the initial mask */
 }
