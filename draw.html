@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- Customization Panel -->
     <div class="left">
         <div id="customization-panel">
             <div class="rect"> </div>
@@ -21,49 +20,27 @@
                 <h1 style="margin-top: 10vh; margin-bottom: 0%; padding: 5%;"> Generation of Patterns</h1>
             </a>
             <div class="description">
-                <p> Drop an image and watch it transform into a pattern! <br><br> Zoom in and out by scrolling. </p>
+                <h2> Welcome to the Drawing Board. </h2>
+                <p> Sketch out what kind of pattern you want to make!</p>
             </div>
             <!-- <div class="bar">
                 <h2><span> Gallery </span></h2>
             </div> -->
             <!-- motif library -->
-            <a hef="motifs.html">
-                <div class="bar">
-                    <h2><span> Designed Motifs</span></h2>
-                </div>
-            </a>
-
-            <a href="draw.html">
-                <div class="bar">
-                    <h2> <span> Drawing Board </span></h2>
-                </div>
-            </a>
-
-            <a href="blog2.html">
-                <div class="bar">
-                    <h2> <span> Pattern Blog </span></h2>
-                </div>
-            </a>
 
         </div>
-
     </div>
 
-    <!-- Drop zone for image -->
-    <div id="drop-zone">Drop image here</div>
+    <div class="pattern-grid">
+        <canvas id="patternCanvas"></canvas>
+    </div>
 
-    <!-- Main canvas for pattern -->
-    <canvas id="pattern-canvas"></canvas>
+    <div id="drawing-container">
+        <canvas id="drawCanvas"></canvas>
+    </div>
 
-    <script src="script.js"></script>
+
+    <script src="draw.js"></script>
 </body>
 
 </html>
-
-
-
-<!-- REFERENCES
- 
-
-
--->
