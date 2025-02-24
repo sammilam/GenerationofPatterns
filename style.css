@@ -6,17 +6,6 @@ html {
     height: 100%;
 }
 
-#drop-zone {
-    width: 300px;
-    height: 300px;
-    border: 2px dashed #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    z-index: 10;
-}
-
 canvas {
     position: absolute;
     top: 0;
@@ -35,15 +24,15 @@ h1 {
 }
 
 h2 {
-    font-family: "argent-pixel-cf", sans-serif;
+    font-family: "logic-monospace", mono;
     font-weight: 400;
-    font-size: 2vh;
     font-style: normal;
+    font-size: 2vh;
     color: #733FED;
 }
 
 p {
-    font-family: "dico-mono", mono;
+    font-family: "darkmode-on", sans-serif;
     font-weight: 400;
     font-size: 14px;
     font-style: normal;
@@ -70,7 +59,7 @@ p {
     align-items: center;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     background-color: #fff;
     z-index: 5;
@@ -175,8 +164,7 @@ a {
 }
 
 .description {
-    width: 50%;
-    height: 50%;
+    padding-left: 5%;
     /* border: 2px solid #733FED; */
 }
 
