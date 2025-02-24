@@ -1,0 +1,210 @@
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin: 0;
+}
+
+
+#minimap {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 40%;
+    border: 2px solid #733FED;
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+}
+
+#minimap-viewport {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: rgba(115, 63, 237, 0.5);
+}
+
+#minimap-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.minimap-post {
+    width: 20%;
+    margin: 2px 0;
+    border: 1px solid #733FED;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.minimap-post img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#blog-container {
+    flex-grow: 1;
+
+    overflow-y: scroll;
+    width: 20vw;
+    height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post {
+    margin-bottom: 40px;
+    width: 40vw;
+    padding: 20px;
+    border: 2px solid #733FED;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.post img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Basic reset */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* TEXT FROM STYLE.CSS*/
+
+h1 {
+    font-family: "puffin-arcade-nerf", sans-serif;
+    font-weight: 800;
+    line-height: 5vh;
+    font-size: 5vh;
+    font-style: normal;
+    color: #733FED;
+}
+
+h2 {
+    font-family: "logic-monospace", mono;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vh;
+    color: #733FED;
+}
+
+p {
+    font-family: "darkmode-on", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+}
+
+
+/* Customization Panel */
+#customization-panel {
+    width: 15vw;
+    height: 100%;
+    padding: 10px;
+
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    background-color: #f4f4f4;
+    stroke: #733FED;
+    box-shadow: 2px 0 5px #733FED;
+    overflow-y: auto;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/* Nav button options*/
+.rect {
+    width: 100%;
+    height: 5vh;
+    background-color: #733FED;
+}
+
+
+.bar:hover h2 {
+    color: white;
+}
+
+.bar {
+    width: 100%;
+    height: 5vh;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    text-align: center;
+
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-top: 2px solid #733FED;
+    color: #f4f4f4;
+    cursor: pointer;
+    /* Make the cursor a hand on hover */
+}
+
+.bar:last-child {
+    border-bottom: 2px solid #733FED;
+    margin-top: -2px;
+}
+
+.bar:hover {
+    color: #f4f4f4;
+    background-color: #733FED;
+
+}
+
+
+.bar:hover span {
+    color: #f4f4f4;
+    /* Ensure the text inside spans changes color */
+}
+
+
+/* Remove default styles from <a> */
+a {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit text color from parent */
+    display: block;
+    /* Ensure <a> takes up full width */
+    width: 100%;
+    /* Make <a> span the full width */
+}
+
+
+
+/* BLOG */
+
+.description {
+    width: 40%;
+    height: 50%;
+    /* border: 2px solid #733FED; */
+}
+
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
