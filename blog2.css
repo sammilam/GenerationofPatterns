@@ -1,8 +1,6 @@
 body {
     display: flex;
-    flex-direction: row;
-    height: 100%;
-    margin: 0;
+    width: 100%;
 }
 
 
@@ -44,13 +42,15 @@ body {
     object-fit: cover;
 }
 
+
+/* BLOG ELEMENTS */
 #blog-container {
     flex-grow: 1;
-
     overflow-y: scroll;
-    width: 20vw;
+    width: 20%;
     height: 100vh;
     padding: 20px;
+    padding-left: 15vw;
 
     display: flex;
     flex-direction: column;
@@ -59,10 +59,12 @@ body {
 
 .post {
     margin-bottom: 40px;
-    width: 40vw;
+    width: 30vw;
     padding: 20px;
     border: 2px solid #733FED;
     border-radius: 5px;
+    background-color: white;
+
 
     display: flex;
     flex-direction: column;
@@ -71,7 +73,7 @@ body {
 }
 
 .post img {
-    width: 50%;
+    width: 100%;
     height: auto;
     object-fit: cover;
 }
@@ -116,16 +118,14 @@ p {
 #customization-panel {
     width: 15vw;
     height: 100%;
-    padding: 10px;
 
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #f4f4f4;
     stroke: #733FED;
     box-shadow: 2px 0 5px #733FED;
-    overflow-y: auto;
-    z-index: 10;
+
 
     display: flex;
     align-items: center;
@@ -140,6 +140,13 @@ p {
     background-color: #733FED;
 }
 
+#contents {
+    padding: 10px;
+    width: 90%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+}
 
 .bar:hover h2 {
     color: white;
@@ -183,21 +190,27 @@ p {
 /* Remove default styles from <a> */
 a {
     text-decoration: none;
-    /* Remove underline */
     color: inherit;
-    /* Inherit text color from parent */
-    display: block;
-    /* Ensure <a> takes up full width */
     width: 100%;
-    /* Make <a> span the full width */
 }
 
+.icon {
+    height: 10vh;
+    margin-top: 10%;
+    margin-bottom: -5%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 /* BLOG */
 
 .description {
-    width: 40%;
+    width: 30%;
     height: 50%;
     /* border: 2px solid #733FED; */
 }

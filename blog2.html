@@ -5,19 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Generation of Patterns</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+
     <link rel="stylesheet" href="https://use.typekit.net/ywv6eyk.css">
     <link rel="stylesheet" href="blog2.css">
 </head>
 
 <body>
     <!-- Customization Panel -->
+
     <div id="customization-panel">
+        <div class="rect"> </div>
+        <!-- icon logo -->
+        <div class="icon">
+
+            <a href="index.html">
+                <img src="./img/favicon.png" alt="favicon">
+            </a>
+        </div>
         <a href="index.html">
-            <h1>Generation of Patterns</h1>
+            <h1 style="padding: 5%; "> Generation of Patterns</h1>
         </a>
         <!-- <h2> MOTIF SELECTOR </h2> -->
 
-    </div>
+        <div id="contents">
+
+
+        </div>
+
     </div>
 
     <!-- Minimap Navigation -->
@@ -58,21 +74,20 @@
         <div class="post" id="post-0">
             <h2>Oct 9, 2024</h2>
             <img src="./img/post0.JPG" alt="Shower curtain">
-            <div class="txt">
-                <p>So many swirls that makes it busy looking.
-                    The colour brown or beige makes it dull.. Why?
-                    Maybe it’s because of the same tone that is not contrasting enough. The dark versus light shades are
-                    different. The swirls fill up the space, making it overstimulated. Feels my energy spread throughout
-                    the
-                    chest area. A swirly florally like pattern of vines in brown and beige combo similar to ink
-                    blotches. I
-                    feel this tension within my chest. Anxious, lost on where to look. I feel my eyes going up and down.
-                    The
-                    little details of the brush makes me feel super itchy. It seems outdated and ancient. It captures
-                    the
-                    maximalist carpet look.
-                </p>
-            </div>
+            <p>So many swirls that makes it busy looking.
+                The colour brown or beige makes it dull. Why?
+                Maybe it’s because of the same tone that is not contrasting enough. The dark versus light shades are
+                different. The swirls fill up the space, making it overstimulated. Feels my energy spread throughout
+                the
+                chest area. A swirly florally like pattern of vines in brown and beige combo similar to ink
+                blotches. I
+                feel this tension within my chest. Anxious, lost on where to look. I feel my eyes going up and down.
+                The
+                little details of the brush makes me feel super itchy. It seems outdated and ancient. It captures
+                the
+                maximalist carpet look.
+            </p>
+
         </div>
         <!-- 002 -->
         <div class="post" id="post-1">
@@ -609,6 +624,8 @@
     <!-- SCRIPT -->
     <script>
         // to have a blog container and minimap scroll together
+        // Select the new div for content
+        // to have a blog container and minimap scroll together
         document.getElementById('blog-container').addEventListener('scroll', () => {
             let container = document.getElementById('blog-container');
             let viewport = document.getElementById('minimap-viewport');
@@ -617,59 +634,24 @@
         });
 
         const dates = [
-            "001",
-            "002",
-            "003",
-            "004",
-            "005",
-            "006",
-            "007",
-            "008",
-            "009",
-            "010",
-            "011",
-            "012",
-            "013",
-            "014",
-            "015",
-            "016",
-            "017",
-            "018",
-            "019",
-            "020",
-            "021",
-            "022",
-            "023",
-            "024",
-            "025",
-            "026",
-            "027",
-            "028",
-            "029",
-            "030",
-            "031",
-            "032",
-            "033",
-            "034",
-            "035",
-            "036",
-            "037",
-            "038",
-            "039"
-
+            "001", "002", "003", "004", "005", "006", "007", "008", "009", "010",
+            "011", "012", "013", "014", "015", "016", "017", "018", "019", "020",
+            "021", "022", "023", "024", "025", "026", "027", "028", "029", "030",
+            "031", "032", "033", "034", "035", "036", "037", "038", "039"
         ];
 
-        const panel = document.getElementById('customization-panel');
+        // Use the #contents div now instead of #customization-panel
+        const contents = document.getElementById('contents');
 
-        // Create the HTML string
+        // Create the HTML string for the dates
         let html = dates.map((date, index) =>
             `<div class="bar" onclick="scrollToPost(${index})">
-            <h2>${date}</h2>
-        </div>`
+        <h2>${date}</h2>
+    </div>`
         ).join('');
 
-        // Insert the generated HTML into the panel
-        panel.innerHTML += html;
+        // Insert the generated HTML into the contents div
+        contents.innerHTML += html;
 
         function scrollToPost(index) {
             console.log(`Scrolling to post ${index}`);
@@ -678,6 +660,7 @@
                 posts[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
+
 
     </script>
 
