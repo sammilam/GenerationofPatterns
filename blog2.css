@@ -54,23 +54,8 @@ body {
     align-items: center;
 }
 
-.minimap-post {
-    width: 20%;
-    margin: 2px 0;
-    border: 1px solid #733FED;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.minimap-post img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-
 /* BLOG ELEMENTS */
-#blog-container {
+#blogContainer {
     flex-grow: 1;
     overflow-y: scroll;
     width: 20%;
@@ -230,6 +215,18 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+.container {
+    position: relative;
+}
+
+.hover-image {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-100%, -100%);
+    display: none;
 }
 
 
