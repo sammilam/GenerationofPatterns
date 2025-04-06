@@ -77,125 +77,61 @@ function drawPattern() {
     ctx.fillStyle = pattern;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
-function takeScreenshot() {
-    const filename = prompt("Enter a name for your screenshot file:", "pattern-screenshot");
-  
-    if (filename) {
-      // Ask user for resolution multiplier
-      const resolutionInput = prompt("Enter the resolution multiplier (e.g., 2 for 2x, 4 for 4x):", "4");
-  
-      // Ensure the input is a number and has a default fallback if empty
-      const resolutionMultiplier = parseInt(resolutionInput) || 4; // Default to 4 if input is invalid
-  
-      // Get the current zoomed canvas size (considering any scaling/zooming done on the main canvas)
-      const zoomedWidth = canvas.width * resolutionMultiplier;
-      const zoomedHeight = canvas.height * resolutionMultiplier;
-  
-      // Create an offscreen canvas with higher resolution
-      const exportCanvas = document.createElement('canvas');
-      const exportCtx = exportCanvas.getContext('2d');
-  
-      // Set the resolution of the export canvas
-      exportCanvas.width = zoomedWidth;
-      exportCanvas.height = zoomedHeight;
-  
-      // Disable image smoothing for sharper edges
-      exportCtx.imageSmoothingEnabled = false;
-  
-      // Apply the same transformations (scale) to the export context
-      exportCtx.setTransform(resolutionMultiplier, 0, 0, resolutionMultiplier, 0, 0);
-  
-      // Redraw the pattern onto the high-res export canvas
-      if (img) {
-        const patternCanvas = document.createElement('canvas');
-        const patternCtx = patternCanvas.getContext('2d');
-        
-        patternCanvas.width = imgSize;
-        patternCanvas.height = imgSize;
-        patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
-  
-        const pattern = exportCtx.createPattern(patternCanvas, 'repeat');
-        exportCtx.fillStyle = pattern;
-        exportCtx.fillRect(0, 0, zoomedWidth, zoomedHeight);
-      }
-  
-      // Create a downloadable link for the high-resolution export
-      const link = document.createElement('a');
-      link.download = `${filename}.png`;
-      link.href = exportCanvas.toDataURL('image/png');
-      link.click();
-  
-      alert(`Screenshot saved as "${filename}.png" with resolution multiplier ${resolutionMultiplier}!`);
-    } else {
-      alert("Screenshot canceled.");
-    }
-  }
-  
 
-//   Drawing board
-  let currentColor = 'black'
 
-  function setup() {
-    createCanvas(600, 600);
-    strokeWeight(1)
+// uses button to save the pattern
+function saveWithButton() {
+  const filename = prompt("Enter a name for your file:", "pattern");
+
+  if (!filename) {
+      alert("Save canceled.");
+      return;
   }
 
-  function draw() {
+  const resolutionMultiplier = 9; // fixed multiplier
 
-    //print('x:' + mouseX + 'y:' + mouseY);
-    //the button
-    fill(255, 0, 0);
-    rect(100, 100, 50, 50)
-    fill(0, 255, 0);
-    rect(300, 100, 50, 50)
-    fill(0, 0, 255);
-    rect(500, 100, 50, 50)
-    fill(255)
-    rect(30, 30, 50, 20)
+  const zoomedWidth = canvas.width * resolutionMultiplier;
+  const zoomedHeight = canvas.height * resolutionMultiplier;
 
-    //make the button can switch the color
-    if (mouseIsPressed == true) {
-      stroke(currentColor);
-      line(mouseX, mouseY, pmouseX, pmouseY);
-    }
+  const exportCanvas = document.createElement('canvas');
+  const exportCtx = exportCanvas.getContext('2d');
 
-    if (mouseIsPressed) {
-      if (mouseX > 100 && mouseX < 150 && mouseY > 100 && mouseY < 150) {
-        print('switching to color red');
-        currentColor = 'red';
-      } else if (mouseX > 300 && mouseX < 350 && mouseY > 100 && mouseY < 150) {
-        print('switching to color green');
-        currentColor = 'green';
-      } else if (mouseX > 500 && mouseX < 550 && mouseY > 100 && mouseY < 150) {
-        print('switching to blue');
-        currentColor = 'blue';
-      } else if (mouseX > 32 && mouseX < 80 && mouseY > 33 && mouseY < 50) {
-        print('clearing the bg');
-        background(255);
-        currentColor = 'black';
+  exportCanvas.width = zoomedWidth;
+  exportCanvas.height = zoomedHeight;
 
-      }
-    }
+  // White background
+  exportCtx.fillStyle = "white";
+  exportCtx.fillRect(0, 0, zoomedWidth, zoomedHeight);
 
-    //name the button
-    textSize(20);
-    text('Red', 108, 132);
-    textSize(15);
-    text('Green', 302, 132);
-    textSize(20);
-    text('blue', 508, 132);
+  exportCtx.imageSmoothingEnabled = false;
+  exportCtx.setTransform(resolutionMultiplier, 0, 0, resolutionMultiplier, 0, 0);
 
+  if (img) {
+      const patternCanvas = document.createElement('canvas');
+      const patternCtx = patternCanvas.getContext('2d');
 
+      patternCanvas.width = imgSize;
+      patternCanvas.height = imgSize;
+      patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
+
+      const pattern = exportCtx.createPattern(patternCanvas, 'repeat');
+      exportCtx.fillStyle = pattern;
+      exportCtx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
-  function keyPressed() {
-    if (key == 's') {
-      saveCanvas('myart.png');
-    }
+  const link = document.createElement('a');
+  link.download = `${filename}.png`;
+  link.href = exportCanvas.toDataURL('image/png');
+  link.click();
+}
+
+document.getElementById("save-button").addEventListener("click", saveWithButton);
+
+window.addEventListener("keydown", (event) => {
+  if (event.key.toLowerCase() === "s") {
+      saveWithButton();
   }
-
-
-  
+});
 
 // Disable image smoothing for sharper image rendering
 
