@@ -190,24 +190,10 @@ a {
 
 .description {
     padding-left: 5%;
+    padding-right: 5%;
     /* border: 2px solid #733FED; */
 }
 
-
-/* OLD BLOG CSS */
-/* .posts {
-    width: 30%;
-    height: 80%;
-    border: 2px solid #733FED;
-    border-radius: 1vw;
-    padding: 10px;
-}
-
-.posts img {
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
-} */
 
 /* DRAWING BOARD*/
 /* .pattern-grid {
