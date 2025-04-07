@@ -78,3 +78,21 @@ function swap(e) {
         stack.prepend(card);
     }, 700); // Ensure this timeout matches your animation duration
 }
+
+stacks.forEach(stack => {
+    const cards = stack.querySelectorAll('.card');
+    const total = cards.length;
+
+    // Add page numbers to each card
+    cards.forEach((card, index) => {
+        let pageNumber = document.createElement('span');
+        pageNumber.className = 'page-number';
+        pageNumber.textContent = `${index + 1} / ${total}`;
+        card.appendChild(pageNumber);
+    });
+
+    // Reverse stack
+    [...cards].reverse().forEach(i => stack.append(i));
+
+    stack.addEventListener("click", swap);
+});

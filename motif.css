@@ -1,8 +1,6 @@
 *,
 *:before,
 *:after {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -222,4 +220,17 @@ a {
         transform: translate(-50%, calc(var(--y) - 15px)) scale(0.85);
         z-index: -1;
     }
+}
+
+/* page numbers */
+.page-number {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    z-index: 10;
 }
