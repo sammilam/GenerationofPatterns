@@ -99,6 +99,7 @@ drawCanvas.addEventListener("mouseup", () => {
     drawing = false;
 });
 
+
 drawCanvas.addEventListener("mousemove", (event) => {
     if (!drawing) return;
     drawCtx.beginPath();
