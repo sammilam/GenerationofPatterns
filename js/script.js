@@ -81,92 +81,54 @@ function drawPattern() {
 
 // uses button to save the pattern
 function saveWithButton() {
-  const filename = prompt("Enter a name for your file:", "pattern");
+    const filename = prompt("Enter a name for your file:", "pattern");
 
-  if (!filename) {
-      alert("Save canceled.");
-      return;
-  }
+    if (!filename) {
+        alert("Save canceled.");
+        return;
+    }
 
-  const resolutionMultiplier = 9; // fixed multiplier
+    const resolutionMultiplier = 9; // fixed multiplier
 
-  const zoomedWidth = canvas.width * resolutionMultiplier;
-  const zoomedHeight = canvas.height * resolutionMultiplier;
+    const zoomedWidth = canvas.width * resolutionMultiplier;
+    const zoomedHeight = canvas.height * resolutionMultiplier;
 
-  const exportCanvas = document.createElement('canvas');
-  const exportCtx = exportCanvas.getContext('2d');
+    const exportCanvas = document.createElement('canvas');
+    const exportCtx = exportCanvas.getContext('2d');
 
-  exportCanvas.width = zoomedWidth;
-  exportCanvas.height = zoomedHeight;
+    exportCanvas.width = zoomedWidth;
+    exportCanvas.height = zoomedHeight;
 
-  // White background
-  exportCtx.fillStyle = "white";
-  exportCtx.fillRect(0, 0, zoomedWidth, zoomedHeight);
+    // White background
+    exportCtx.fillStyle = "white";
+    exportCtx.fillRect(0, 0, zoomedWidth, zoomedHeight);
 
-  exportCtx.imageSmoothingEnabled = false;
-  exportCtx.setTransform(resolutionMultiplier, 0, 0, resolutionMultiplier, 0, 0);
+    exportCtx.imageSmoothingEnabled = false;
+    exportCtx.setTransform(resolutionMultiplier, 0, 0, resolutionMultiplier, 0, 0);
 
-  if (img) {
-      const patternCanvas = document.createElement('canvas');
-      const patternCtx = patternCanvas.getContext('2d');
+    if (img) {
+        const patternCanvas = document.createElement('canvas');
+        const patternCtx = patternCanvas.getContext('2d');
 
-      patternCanvas.width = imgSize;
-      patternCanvas.height = imgSize;
-      patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
+        patternCanvas.width = imgSize;
+        patternCanvas.height = imgSize;
+        patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
 
-      const pattern = exportCtx.createPattern(patternCanvas, 'repeat');
-      exportCtx.fillStyle = pattern;
-      exportCtx.fillRect(0, 0, canvas.width, canvas.height);
-  }
+        const pattern = exportCtx.createPattern(patternCanvas, 'repeat');
+        exportCtx.fillStyle = pattern;
+        exportCtx.fillRect(0, 0, canvas.width, canvas.height);
+    }
 
-  const link = document.createElement('a');
-  link.download = `${filename}.png`;
-  link.href = exportCanvas.toDataURL('image/png');
-  link.click();
+    const link = document.createElement('a');
+    link.download = `${filename}.png`;
+    link.href = exportCanvas.toDataURL('image/png');
+    link.click();
 }
 
 document.getElementById("save-button").addEventListener("click", saveWithButton);
 
 window.addEventListener("keydown", (event) => {
-  if (event.key.toLowerCase() === "s") {
-      saveWithButton();
-  }
+    if (event.key.toLowerCase() === "s") {
+        saveWithButton();
+    }
 });
-
-// Disable image smoothing for sharper image rendering
-
-  
-
-// function takeSVGExport() {
-//     const filename = prompt("Enter a name for your SVG file:", "pattern");
-
-//     if (filename) {
-//         // Create SVG string
-//         let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}">`;
-
-//         // Add the pattern
-//         if (img) {
-//             const patternWidth = imgSize;
-//             const patternHeight = imgSize;
-//             svgContent += `<pattern id="pattern1" patternUnits="userSpaceOnUse" width="${patternWidth}" height="${patternHeight}">
-//                           <image href="${img.src}" width="${patternWidth}" height="${patternHeight}" />
-//                         </pattern>`;
-
-//             svgContent += `<rect width="100%" height="100%" fill="url(#pattern1)" />`;
-//         }
-
-//         svgContent += `</svg>`;
-
-//         // Create an invisible link to download the SVG
-//         const link = document.createElement('a');
-//         link.download = `${filename}.svg`;
-//         link.href = 'data:image/svg+xml;base64,' + btoa(svgContent); // Encoding the SVG string
-//         link.click();
-
-//         // Confirmation message
-//         alert(`SVG screenshot saved as "${filename}.svg"!`);
-//     } else {
-//         alert("Screenshot canceled.");
-//     }
-// }
-

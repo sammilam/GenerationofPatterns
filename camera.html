@@ -7,6 +7,7 @@
     <title>Generation of Patterns</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
 
     <link rel="stylesheet" href="https://use.typekit.net/ywv6eyk.css">
@@ -47,14 +48,6 @@
                         <h2> <span> Drawing Board </span></h2>
                     </div>
                 </a>
-
-                <!-- camera -->
-                <a href="camera.html">
-                    <div class="bar">
-                        <h2> <span> Camera Here! </span></h2>
-                    </div>
-                </a>
-
                 <!-- motif library -->
                 <a href="motif2.html">
                     <div class="bar">
@@ -62,29 +55,26 @@
                     </div>
                 </a>
 
-
                 <!-- blog -->
                 <a href="blog2.html">
                     <div class="bar">
                         <h2> <span> Pattern Blog </span></h2>
                     </div>
                 </a>
-                <div class="save-wrapper">
-                    <button id="save-button">Save Pattern</button>
-                </div>
+
         </div>
 
     </div>
 
-    <!-- Drop zone for image -->
-    <div id="drop-zone">Drop image here</div>
+    <div class="containCam">
 
-    <div id="image-preview"></div>
+        <div id="cam"></div>>
+        <button id="snapshotButton">Capture Snapshot</button>
 
-    <!-- Main canvas for pattern -->
-    <canvas id="pattern-canvas"></canvas>
+    </div>
 
-    <script src="./js/script.js"></script>
+
+    <script src="./js/camera.js"></script>
 </body>
 
 </html>

@@ -198,3 +198,80 @@ a {
     left: 0;
     z-index: 0;
 }
+
+#Cam {
+    position: fixed;
+    /* Change to fixed for centering relative to the viewport */
+
+    border: 2px dashed #733FED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    /* Remove margin to avoid offset */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.containCam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#snapshotButton {
+    margin-top: 20%;
+
+    /* Center children vertically */
+    gap: 10px;
+
+    background-color: #733FED;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    z-index: 1000;
+    /* Ensure it appears above other elements */
+}
+
+#snapshotButton:hover {
+    /* Center children vertically */
+    gap: 10px;
+    /* Add spacing between children */
+    background-color: #5a2ecb;
+    /* Add hover effect */
+}
+
+.cam-center {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center children vertically */
+    gap: 10px;
+    /* Add spacing between children */
+}
