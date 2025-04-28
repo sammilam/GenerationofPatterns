@@ -41,3 +41,16 @@ while ($row = $result->fetch_assoc()) {
 }
 echo '</div>';
 ?>
+
+<script>
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert('Your browser does not support camera access. Please use a modern browser like Chrome or Firefox.');
+    } else {
+        video = createCapture({
+            video: true,
+            audio: false,
+        });
+        video.size(640, 480);
+        video.hide();
+    }
+</script>
