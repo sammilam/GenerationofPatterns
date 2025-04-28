@@ -50,7 +50,7 @@ h2 {
 p {
     font-family: "darkmode-on", sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: clamp(12pt, 1.4vw, 14px);
     font-style: normal;
 }
 
@@ -162,30 +162,10 @@ a {
     width: 100%;
 }
 
-
-
-/* BLOG */
-
-.blog {
-    position: absolute;
-    left: 15vw;
-    padding: 20vh;
-    padding-top: 0px;
-
-    /* border: 2px solid #733FED; */
-}
-
 .center {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.tumb {
-    display: flex;
-    flex-direction: row;
-    gap: 2vh;
-    align-items: flex-start;
 }
 
 .description {
@@ -193,19 +173,6 @@ a {
     padding-right: 5%;
     /* border: 2px solid #733FED; */
 }
-
-
-/* DRAWING BOARD*/
-/* .pattern-grid {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    z-index: -1;
-} */
-
 
 #drawing-container {
     position: absolute;

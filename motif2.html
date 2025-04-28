@@ -21,52 +21,1034 @@
 <body>
 
     <!-- Customization Panel -->
-    <div class="left">
-
-        <div id="customization-panel">
-            <div class="rect"> </div> <!-- Divider -->
-            <!-- icon -->
-            <div class="icon">
-                <a href="index.html">
-                    <img src="./img/favicon.png" alt="favicon">
-                </a>
-            </div>
-            <!-- title -->
+    <div id="customization-panel">
+        <div class="rect"> </div> <!-- Divider -->
+        <!-- icon -->
+        <div class="icon">
             <a href="index.html">
-                <h1 style="padding: 5%; "> Generation of Patterns</h1>
+                <img src="./img/favicon.png" alt="favicon">
+            </a>
+        </div>
+        <!-- title -->
+        <a href="index.html">
+            <h1 style="padding: 5%; "> Generation of Patterns</h1>
+        </a>
+        <!-- Generator -->
+        <a href="./index.html">
+            <div class="bar">
+                <h2> <span> Pattern Generator </span></h2>
+            </div>
+
+            <!-- drawing board -->
+            <a href="./draw.html">
+                <div class="bar">
+                    <h2> <span> Drawing Board </span></h2>
+                </div>
+            </a>
+            <!-- motif library -->
+            <a href="./motif2.html">
+                <div class="bar">
+                    <h2><span> Designed Motifs</span></h2>
+                </div>
             </a>
 
-            <div class="description">
-                <p> Welcome to the Motif Library. <br> <br> These daily motifs, some drawn and developed in Illustrator
-                    since January 27 - March 4, 2025, highlight my strongest emotions daily. </p>
-                <br>
-                <p> Each date is restricted with a limited colour palette to focus on forms.</p>
-            </div>
-
-
-        </div>
+            <!-- blog -->
+            <a href="./blog2.html">
+                <div class="bar">
+                    <h2> <span> Pattern Blog </span></h2>
+                </div>
+            </a>
 
     </div>
 
 
-    <div class="right">
-        <div class="motif-container">
-            <div class="motif-item">
-                <img src="img/motif1.png" alt="Motif 1">
-                <p>January 27, 2025</p>
-            </div>
-            <div class="motif-item">
-                <img src="img/motif2.png" alt="Motif 2">
-                <p>January 28, 2025</p>
-            </div>
-            <div class="motif-item">
-                <img src="img/motif3.png" alt="Motif 3">
-                <p>January 29, 2025</p>
-            </div>
-            <!-- Add more motifs as needed -->
+    <!-- Motif Title -->
+    <div class="rect"></div> <!-- Divider -->
+
+    <div id="motif-gallery">
+
+        <h1 class="motif-title"> Welcome to the Motif Gallery</h1>
+        <!-- Description -->
+        <div class="description">
+            <p>These daily motifs, some drawn and developed in Illustrator since January 27 - Mar 4, 2025, highlight my
+                strongest emotions daily. Click to see the entire pattern! </p>
+            <p> Each date is restricted with a limited colour palette to focus on forms.</p>
+        </div>
+        <!-- Emotion Filter Navigation Bar -->
+        <div id="emotion-filters">
+            <button class="filter-btn" data-filter="happy">Happy</button>
+            <button class="filter-btn" data-filter="sad">Sad</button>
+            <button class="filter-btn" data-filter="angry">Angry</button>
+            <button class="filter-btn" data-filter="calm">Calm</button>
+            <button class="filter-btn" data-filter="excited">Excited</button>
+            <button class="filter-btn" data-filter="stressed">Stressed</button>
+            <button class="filter-btn" data-filter="satisfied">Satisfied</button>
+            <button class="filter-btn" data-filter="irritated">Irritated</button>
+            <button class="filter-btn" data-filter="anxious">Anxious</button>
+            <button class="filter-btn" data-filter="chill">Chill</button>
+            <button class="filter-btn" data-filter="motivated">Motivated</button>
+            <button class="filter-btn" data-filter="disgusted">Disgusted</button>
+            <button class="filter-btn" data-filter="embarassed">Embarassed</button>
+            <button class="filter-btn" data-filter="grateful">Grateful</button>
+
+
+            <button class="filter-btn reset-btn">Reset</button> <!-- Reset button -->
+
+            <button class="filter-btn" data-filter="recent">Most Recent</button>
         </div>
 
-        <script src="./js/motif.js"></script>
+        <div class="pattern-grid">
+            <!-- Jan 27 happy-->
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/1.png" alt="Motif 0127 1" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/2.png" alt="Motif 0127 2" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/3.png" alt="Motif 0127 3" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/4.png" alt="Motif 0127 4" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/5.png" alt="Motif 0127 5" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/6.png" alt="Motif 0127 6" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/7.png" alt="Motif 0127 7" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/8.png" alt="Motif 0127 8" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <div class="pattern-box" data-date="2025-01-27">
+                <img src="./motifs/0127/9.png" alt="Motif 0127 9" class="happy">
+                <span class="pattern-date">2025-01-27</span>
+
+            </div>
+            <!-- Jan 29 happy-->
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/1.png" alt="Motif 0129 1" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/2.png" alt="Motif 0129 2" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/3.png" alt="Motif 0129 3" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/4.png" alt="Motif 0129 4" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/5.png" alt="Motif 0129 5" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/6.png" alt="Motif 0129 6" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/7.png" alt="Motif 0129 7" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/8.png" alt="Motif 0129 8" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/9.png" alt="Motif 0129 9" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/10.png" alt="Motif 0129 10" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/11.png" alt="Motif 0129 11" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-29">
+                <img src="./motifs/0129/12.png" alt="Motif 0129 12" class="happy">
+                <span class="pattern-date">2025-01-29</span>
+            </div>
+            <!-- Jan 30 angry-->
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/1.png" alt="Motif 0130 1" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/2.png" alt="Motif 0130 2" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/3.png" alt="Motif 0130 3" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/4.png" alt="Motif 0130 4" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/5.png" alt="Motif 0130 5" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/6.png" alt="Motif 0130 6" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/7.png" alt="Motif 0130 7" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/8.png" alt="Motif 0130 8" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/9.png" alt="Motif 0130 9" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/10.png" alt="Motif 0130 10" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/11.png" alt="Motif 0130 11" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-30">
+                <img src="./motifs/0130/12.png" alt="Motif 0130 12" class="angry">
+                <span class="pattern-date">2025-01-30</span>
+            </div>
+
+            <!-- Jan 31 satisfied-->
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/1.png" alt="Motif 0131 1" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/2.png" alt="Motif 0131 2" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/3.png" alt="Motif 0131 3" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/4.png" alt="Motif 0131 4" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/5.png" alt="Motif 0131 5" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/6.png" alt="Motif 0131 6" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/7.png" alt="Motif 0131 7" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/8.png" alt="Motif 0131 8" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/9.png" alt="Motif 0131 9" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/10.png" alt="Motif 0131 10" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/11.png" alt="Motif 0131 11" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+            <div class="pattern-box" data-date="2025-01-31">
+                <img src="./motifs/0131/12.png" alt="Motif 0131 12" class="satisfied">
+                <span class="pattern-date">2025-01-31</span>
+            </div>
+
+
+            <!-- Feb 1 Excited-->
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/1.png" alt="Motif 0201 1" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/2.png" alt="Motif 0201 2" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/3.png" alt="Motif 0201 3" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/4.png" alt="Motif 0201 4" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/5.png" alt="Motif 0201 5" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/6.png" alt="Motif 0201 6" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/7.png" alt="Motif 0201 7" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/8.png" alt="Motif 0201 8" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/9.png" alt="Motif 0201 9" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/10.png" alt="Motif 0201 10" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/11.png" alt="Motif 0201 11" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-01">
+                <img src="./motifs/0201/12.png" alt="Motif 0201 12" class="excited">
+                <span class="pattern-date">2025-02-01</span>
+            </div>
+
+            <!-- feb 2 calm-->
+            <div class="pattern-box" data-date="2025-02-02">
+                <img src="./motifs/0202/1.png" alt="Motif 0202 1" class="calm">
+                <span class="pattern-date">2025-02-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-02">
+                <img src="./motifs/0202/2.png" alt="Motif 0202 2" class="calm">
+                <span class="pattern-date">2025-02-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-02">
+                <img src="./motifs/0202/3.png" alt="Motif 0202 3" class="calm">
+                <span class="pattern-date">2025-02-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-02">
+                <img src="./motifs/0202/4.png" alt="Motif 0202 4" class="calm">
+                <span class="pattern-date">2025-02-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-02">
+                <img src="./motifs/0202/5.png" alt="Motif 0202 5" class="calm">
+                <span class="pattern-date">2025-02-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-02">
+                <img src="./motifs/0202/6.png" alt="Motif 0202 6" class="calm">
+                <span class="pattern-date">2025-02-02</span>
+            </div>
+            <!-- Feb 3 tired-->
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/1.png" alt="Motif 0203 1" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/2.png" alt="Motif 0203 2" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/3.png" alt="Motif 0203 3" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/4.png" alt="Motif 0203 4" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/5.png" alt="Motif 0203 5" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/6.png" alt="Motif 0203 6" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/7.png" alt="Motif 0203 7" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/8.png" alt="Motif 0203 8" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-03">
+                <img src="./motifs/0203/9.png" alt="Motif 0203 9" class="tired">
+                <span class="pattern-date">2025-02-03</span>
+            </div>
+            <!-- Feb 4 Irritated-->
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/1.png" alt="Motif 0204 1" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/2.png" alt="Motif 0204 2" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/3.png" alt="Motif 0204 3" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/4.png" alt="Motif 0204 4" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/5.png" alt="Motif 0204 5" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/6.png" alt="Motif 0204 6" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/7.png" alt="Motif 0204 7" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-04">
+                <img src="./motifs/0204/8.png" alt="Motif 0204 8" class="irritated">
+                <span class="pattern-date">2025-02-04</span>
+            </div>
+            <!-- Feb 5 fixed emotion from here -->
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/1.png" alt="Motif 0205 1" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/2.png" alt="Motif 0205 2" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/3.png" alt="Motif 0205 3" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/4.png" alt="Motif 0205 4" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/5.png" alt="Motif 0205 5" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/6.png" alt="Motif 0205 6" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/7.png" alt="Motif 0205 7" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/8.png" alt="Motif 0205 8" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-05">
+                <img src="./motifs/0205/9.png" alt="Motif 0205 9" class="sad">
+                <span class="pattern-date">2025-02-05</span>
+            </div>
+
+
+            <!-- Feb 6 motivated -->
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/1.png" alt="Motif 0206 1" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/2.png" alt="Motif 0206 2" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/3.png" alt="Motif 0206 3" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/4.png" alt="Motif 0206 4" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/5.png" alt="Motif 0206 5" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/6.png" alt="Motif 0206 6" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/7.png" alt="Motif 0206 7" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/8.png" alt="Motif 0206 8" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-06">
+                <img src="./motifs/0206/9.png" alt="Motif 0206 9" class="motivated">
+                <span class="pattern-date">2025-02-06</span>
+            </div>
+
+            <!-- Feb 7 disgusted-->
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/1.png" alt="Motif 0207 1" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/2.png" alt="Motif 0207 2" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/3.png" alt="Motif 0207 3" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/4.png" alt="Motif 0207 4" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/5.png" alt="Motif 0207 5" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/6.png" alt="Motif 0207 6" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/7.png" alt="Motif 0207 7" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/8.png" alt="Motif 0207 8" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-07">
+                <img src="./motifs/0207/9.png" alt="Motif 0207 9" class="disgusted">
+                <span class="pattern-date">2025-02-07</span>
+            </div>
+
+            <!-- Feb 8 happy-->
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/1.png" alt="Motif 0208 1" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/2.png" alt="Motif 0208 2" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/3.png" alt="Motif 0208 3" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/4.png" alt="Motif 0208 4" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/5.png" alt="Motif 0208 5" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/6.png" alt="Motif 0208 6" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/7.png" alt="Motif 0208 7" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/8.png" alt="Motif 0208 8" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/9.png" alt="Motif 0208 9" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/10.png" alt="Motif 0208 10" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/11.png" alt="Motif 0208 11" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-08">
+                <img src="./motifs/0208/12.png" alt="Motif 0208 12" class="happy">
+                <span class="pattern-date">2025-02-08</span>
+            </div>
+
+            <!-- Feb 9 calm -->
+
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/1.png" alt="Motif 0209 1" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/2.png" alt="Motif 0209 2" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/3.png" alt="Motif 0209 3" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/4.png" alt="Motif 0209 4" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/5.png" alt="Motif 0209 5" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/6.png" alt="Motif 0209 6" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/7.png" alt="Motif 0209 7" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/8.png" alt="Motif 0209 8" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-09">
+                <img src="./motifs/0209/9.png" alt="Motif 0209 9" class="calm">
+                <span class="pattern-date">2025-02-09</span>
+            </div>
+
+
+            <!-- Feb 10 chill -->
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/1.png" alt="Motif 0210 1" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/2.png" alt="Motif 0210 2" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/3.png" alt="Motif 0210 3" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/4.png" alt="Motif 0210 4" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/5.png" alt="Motif 0210 5" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/6.png" alt="Motif 0210 6" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/7.png" alt="Motif 0210 7" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/8.png" alt="Motif 0210 8" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-10">
+                <img src="./motifs/0210/9.png" alt="Motif 0210 9" class="chill">
+                <span class="pattern-date">2025-02-10</span>
+            </div>
+
+            <!-- Feb 11 sad-->
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/1.png" alt="Motif 0211 1" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/2.png" alt="Motif 0211 2" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/3.png" alt="Motif 0211 3" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/4.png" alt="Motif 0211 4" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/5.png" alt="Motif 0211 5" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/6.png" alt="Motif 0211 6" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-11">
+                <img src="./motifs/0211/7.png" alt="Motif 0211 7" class="sad">
+                <span class="pattern-date">2025-02-11</span>
+            </div>
+
+            <!-- Feb 12 angry-->
+
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/1.png" alt="Motif 0212 1" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/2.png" alt="Motif 0212 2" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/3.png" alt="Motif 0212 3" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/4.png" alt="Motif 0212 4" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/5.png" alt="Motif 0212 5" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/6.png" alt="Motif 0212 6" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/7.png" alt="Motif 0212 7" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-12">
+                <img src="./motifs/0212/8.png" alt="Motif 0212 8" class="angry">
+                <span class="pattern-date">2025-02-12</span>
+            </div>
+
+            <!-- Feb 13 embarassed-->
+
+            <div class="pattern-box" data-date="2025-02-13">
+                <img src="./motifs/0213/1.png" alt="Motif 0213 1" class="embarassed">
+                <span class="pattern-date">2025-02-13</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-13">
+                <img src="./motifs/0213/2.png" alt="Motif 0213 2" class="embarassed">
+                <span class="pattern-date">2025-02-13</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-13">
+                <img src="./motifs/0213/3.png" alt="Motif 0213 3" class="embarassed">
+                <span class="pattern-date">2025-02-13</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-13">
+                <img src="./motifs/0213/4.png" alt="Motif 0213 4" class="embarassed">
+                <span class="pattern-date">2025-02-13</span>
+            </div>
+
+
+            <!-- Feb 14 grateful-->
+
+            <div class="pattern-box" data-date="2025-02-14">
+                <img src="./motifs/0214/1.png" alt="Motif 0214 1" class="grateful">
+                <span class="pattern-date">2025-02-14</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-14">
+                <img src="./motifs/0214/2.png" alt="Motif 0214 2" class="grateful">
+                <span class="pattern-date">2025-02-14</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-14">
+                <img src="./motifs/0214/3.png" alt="Motif 0214 3" class="grateful">
+                <span class="pattern-date">2025-02-14</span>
+            </div>
+
+            <!-- Feb 15 satisfied -->
+
+            <div class="pattern-box" data-date="2025-02-15">
+                <img src="./motifs/0215/1.png" alt="Motif 0215 1" class="satisfied">
+                <span class="pattern-date">2025-02-15</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-15">
+                <img src="./motifs/0215/2.png" alt="Motif 0215 2" class="satisfied">
+                <span class="pattern-date">2025-02-15</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-15">
+                <img src="./motifs/0215/3.png" alt="Motif 0215 3" class="satisfied">
+                <span class="pattern-date">2025-02-15</span>
+            </div>
+
+            <!-- Feb 16 tired -->
+            <div class="pattern-box" data-date="2025-02-16">
+                <img src="./motifs/0216/1.png" alt="Motif 0216 1" class="tired">
+                <span class="pattern-date">2025-02-16</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-16">
+                <img src="./motifs/0216/2.png" alt="Motif 0216 2" class="tired">
+                <span class="pattern-date">2025-02-16</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-16">
+                <img src="./motifs/0216/3.png" alt="Motif 0216 3" class="tired">
+                <span class="pattern-date">2025-02-16</span>
+            </div>
+
+            <!-- Feb 17 happy -->
+            <div class="pattern-box" data-date="2025-02-17">
+                <img src="./motifs/0217/1.png" alt="Motif 0217 1" class="happy">
+                <span class="pattern-date">2025-02-17</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-17">
+                <img src="./motifs/0217/2.png" alt="Motif 0217 2" class="happy">
+                <span class="pattern-date">2025-02-17</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-17">
+                <img src="./motifs/0217/3.png" alt="Motif 0217 3" class="happy">
+                <span class="pattern-date">2025-02-17</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-17">
+                <img src="./motifs/0217/4.png" alt="Motif 0217 4" class="happy">
+                <span class="pattern-date">2025-02-17</span>
+            </div>
+
+            <!-- Feb 18 tired-->
+            <div class="pattern-box" data-date="2025-02-18">
+                <img src="./motifs/0218/1.png" alt="Motif 0218 1" class="tired">
+                <span class="pattern-date">2025-02-18</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-18">
+                <img src="./motifs/0218/2.png" alt="Motif 0218 2" class="tired">
+                <span class="pattern-date">2025-02-18</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-18">
+                <img src="./motifs/0218/3.png" alt="Motif 0218 3" class="tired">
+                <span class="pattern-date">2025-02-18</span>
+            </div>
+
+            <!-- Feb 19 motivated-->
+            <div class="pattern-box" data-date="2025-02-19">
+                <img src="./motifs/0219/1.png" alt="Motif 0219 1" class="motivated">
+                <span class="pattern-date">2025-02-19</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-19">
+                <img src="./motifs/0219/2.png" alt="Motif 0219 2" class="motivated">
+                <span class="pattern-date">2025-02-19</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-19">
+                <img src="./motifs/0219/3.png" alt="Motif 0219 3" class="motivated">
+                <span class="pattern-date">2025-02-19</span>
+            </div>
+            <!-- Feb 20 stressed-->
+            <div class="pattern-box" data-date="2025-02-20">
+                <img src="./motifs/0220/1.png" alt="Motif 0220 1" class="stressed">
+                <span class="pattern-date">2025-02-20</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-20">
+                <img src="./motifs/0220/2.png" alt="Motif 0220 2" class="stressed">
+                <span class="pattern-date">2025-02-20</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-20">
+                <img src="./motifs/0220/3.png" alt="Motif 0220 3" class="stressed">
+                <span class="pattern-date">2025-02-20</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-20">
+                <img src="./motifs/0220/4.png" alt="Motif 0220 4" class="stressed">
+                <span class="pattern-date">2025-02-20</span>
+            </div>
+
+
+            <!-- Feb 21 tired-->
+            <div class="pattern-box" data-date="2025-02-21">
+                <img src="./motifs/0221/1.png" alt="Motif 0221 1" class="tired">
+                <span class="pattern-date">2025-02-21</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-21">
+                <img src="./motifs/0221/2.png" alt="Motif 0221 2" class="tired">
+                <span class="pattern-date">2025-02-21</span>
+            </div>
+
+            <!-- Feb 22 angry-->
+            <div class="pattern-box" data-date="2025-02-22">
+                <img src="./motifs/0222/1.png" alt="Motif 0222 1" class="angry">
+                <span class="pattern-date">2025-02-22</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-22">
+                <img src="./motifs/0222/2.png" alt="Motif 0222 2" class="angry">
+                <span class="pattern-date">2025-02-22</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-22">
+                <img src="./motifs/0222/3.png" alt="Motif 0222 3" class="angry">
+                <span class="pattern-date">2025-02-22</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-22">
+                <img src="./motifs/0222/4.png" alt="Motif 0222 4" class="angry">
+                <span class="pattern-date">2025-02-22</span>
+            </div>
+
+            <!-- Feb 23 anxious-->
+            <div class="pattern-box" data-date="2025-02-23">
+                <img src="./motifs/0223/1.png" alt="Motif 0223 1" class="anxious">
+                <span class="pattern-date">2025-02-23</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-23">
+                <img src="./motifs/0223/2.png" alt="Motif 0223 2" class="anxious">
+                <span class="pattern-date">2025-02-23</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-23">
+                <img src="./motifs/0223/3.png" alt="Motif 0223 3" class="anxious">
+                <span class="pattern-date">2025-02-23</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-23">
+                <img src="./motifs/0223/4.png" alt="Motif 0223 4" class="anxious">
+                <span class="pattern-date">2025-02-23</span>
+            </div>
+
+            <!-- Feb 24 tired-->
+            <div class="pattern-box" data-date="2025-02-24">
+                <img src="./motifs/0224/1.png" alt="Motif 0224 1" class="tired">
+                <span class="pattern-date">2025-02-24</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-24">
+                <img src="./motifs/0224/2.png" alt="Motif 0224 2" class="tired">
+                <span class="pattern-date">2025-02-24</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-24">
+                <img src="./motifs/0224/3.png" alt="Motif 0224 3" class="tired">
+                <span class="pattern-date">2025-02-24</span>
+            </div>
+
+            <!-- Feb 25 anxious-->
+            <div class="pattern-box" data-date="2025-02-25">
+                <img src="./motifs/0225/1.png" alt="Motif 0225 1" class="anxious">
+                <span class="pattern-date">2025-02-25</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-25">
+                <img src="./motifs/0225/2.png" alt="Motif 0225 2" class="anxious">
+                <span class="pattern-date">2025-02-25</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-25">
+                <img src="./motifs/0225/3.png" alt="Motif 0225 3" class="anxious">
+                <span class="pattern-date">2025-02-25</span>
+            </div>
+
+            <!-- Feb 26 chill-->
+            <div class="pattern-box" data-date="2025-02-26">
+                <img src="./motifs/0226/1.png" alt="Motif 0226 1" class="Chill">
+                <span class="pattern-date">2025-02-26</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-26">
+                <img src="./motifs/0226/2.png" alt="Motif 0226 2" class="Chill">
+                <span class="pattern-date">2025-02-26</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-26">
+                <img src="./motifs/0226/3.png" alt="Motif 0226 3" class="Chill">
+                <span class="pattern-date">2025-02-26</span>
+            </div>
+
+            <!-- Feb 27 anxious-->
+            <div class="pattern-box" data-date="2025-02-27">
+                <img src="./motifs/0227/1.png" alt="Motif 0227 1" class="happy">
+                <span class="pattern-date">2025-02-27</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-27">
+                <img src="./motifs/0227/2.png" alt="Motif 0227 2" class="happy">
+                <span class="pattern-date">2025-02-27</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-27">
+                <img src="./motifs/0227/3.png" alt="Motif 0227 3" class="happy">
+                <span class="pattern-date">2025-02-27</span>
+            </div>
+            <!-- Feb 28 excited-->
+            <div class="pattern-box" data-date="2025-02-28">
+                <img src="./motifs/0228/1.png" alt="Motif 0228 1" class="excited">
+                <span class="pattern-date">2025-02-28</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-28">
+                <img src="./motifs/0228/2.png" alt="Motif 0228 2" class="excited">
+                <span class="pattern-date">2025-02-28</span>
+            </div>
+            <div class="pattern-box" data-date="2025-02-28">
+                <img src="./motifs/0228/3.png" alt="Motif 0228 3" class="excited">
+                <span class="pattern-date">2025-02-28</span>
+            </div>
+
+            <!-- Mar 1 stressed-->
+            <div class="pattern-box" data-date="2025-03-01">
+                <img src="./motifs/0301/1.png" alt="Motif 0301 1" class="stressed">
+                <span class="pattern-date">2025-03-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-03-01">
+                <img src="./motifs/0301/2.png" alt="Motif 0301 2" class="stressed">
+                <span class="pattern-date">2025-03-01</span>
+            </div>
+            <div class="pattern-box" data-date="2025-03-01">
+                <img src="./motifs/0301/3.png" alt="Motif 0301 3" class="stressed">
+                <span class="pattern-date">2025-03-01</span>
+            </div>
+            <!-- Mar 2 happy-->
+            <div class="pattern-box" data-date="2025-03-02">
+                <img src="./motifs/0302/1.png" alt="Motif 0302 1" class="happy">
+                <span class="pattern-date">2025-03-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-03-02">
+                <img src="./motifs/0302/2.png" alt="Motif 0302 2" class="happy">
+                <span class="pattern-date">2025-03-02</span>
+            </div>
+            <div class="pattern-box" data-date="2025-03-02">
+                <img src="./motifs/0302/3.png" alt="Motif 0302 3" class="happy">
+                <span class="pattern-date">2025-03-02</span>
+            </div>
+
+            <!-- Mar 3 sad-->
+            <div class="pattern-box" data-date="2025-03-03">
+                <img src="./motifs/0303/1.png" alt="Motif 0303 1" class="sad">
+                <span class="pattern-date">2025-03-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-03-03">
+                <img src="./motifs/0303/2.png" alt="Motif 0303 2" class="sad">
+                <span class="pattern-date">2025-03-03</span>
+            </div>
+            <div class="pattern-box" data-date="2025-03-03">
+                <img src="./motifs/0303/3.png" alt="Motif 0303 3" class="sad">
+                <span class="pattern-date">2025-03-03</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="popup" class="hidden">
+        <div id="popup-content">
+            <button id="close-popup">X</button>
+            <img id="popup-image" src="" alt="Selected Pattern">
+        </div>
+    </div>
+
+
+
+    <script src="./js/motif2.js"></script>
 
 </body>
 
