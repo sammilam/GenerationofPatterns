@@ -9,25 +9,6 @@ $(document).ready(function () {
     randomizePatterns(); // Randomize the patterns on page load
     attachPopupListeners(); // Attach popup listeners
 
-    $('.pattern-box').on('mousemove', function (e) {
-        const $date = $(this).find('.pattern-date');
-        const offsetX = e.offsetX; // Cursor X position relative to the box
-        const offsetY = e.offsetY; // Cursor Y position relative to the box
-
-        $date.css({
-            top: `${offsetY}px`,
-            left: `${offsetX}px`,
-            transform: 'translate(-50%, -50%)', // Center the text at the cursor
-        });
-    });
-
-    $('.pattern-box').on('mouseleave', function () {
-        const $date = $(this).find('.pattern-date');
-        $date.css({
-            color: 'solid', // Hide the text when the cursor leaves
-        });
-    });
-
     // Filter patterns based on emotion
     let originalOrder = $('.pattern-box').toArray(); // Store the original order of pattern boxes
 
@@ -54,6 +35,27 @@ $(document).ready(function () {
     });
 });
 
+// mouse hover for dates
+$(document).ready(function () {
+    $('.pattern-box').on('mousemove', function (e) {
+        const $date = $(this).find('.pattern-date');
+        const offsetX = e.offsetX; // Cursor X position relative to the box
+        const offsetY = e.offsetY; // Cursor Y position relative to the box
+
+        $date.css({
+            top: `${offsetY}px`,
+            left: `${offsetX}px`,
+            transform: 'translate(-50%, -50%)', // Center the text at the cursor
+        });
+    });
+
+    $('.pattern-box').on('mouseleave', function () {
+        const $date = $(this).find('.pattern-date');
+        $date.css({
+            color: 'solid', // Hide the text when the cursor leaves
+        });
+    });
+});
 
 function attachPopupListeners() {
     $('.pattern-box img').on('click', function () {
