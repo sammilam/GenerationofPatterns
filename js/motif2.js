@@ -1,9 +1,8 @@
-src = "https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js" >
-    $(document).ready(function () {
-        console.log('jQuery is working!');
-    });
+// src = "https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js" >
+//     $(document).ready(function () {
+//         console.log('jQuery is working!');
+//     });
 
-console.log('hello!');
 
 // Filter patterns based on emotion
 $(document).ready(function () {
@@ -34,25 +33,52 @@ $(document).ready(function () {
 });
 
 // Popup functionality
-$(document).ready(function () {
-    // Show popup when a pattern is clicked
+// $(document).ready(function () {
+//     // Show popup when a pattern is clicked
+//     $('.pattern-box img').on('click', function () {
+//         const imgSrc = $(this).attr('src'); // Get the source of the clicked image
+//         $('#popup-image').attr('src', imgSrc); // Set the popup image source
+//         $('#popup').removeClass('hidden'); // Show the popup
+//     });
+
+//     // Close popup when the close button is clicked
+//     $('#close-popup').on('click', function () {
+//         $('#popup').addClass('hidden'); // Hide the popup
+//     });
+
+//     // Close popup when clicking outside the content
+//     $('#popup').on('click', function (e) {
+//         if ($(e.target).is('#popup')) {
+//             $('#popup').addClass('hidden'); // Hide the popup
+//         }
+//     });
+// });
+
+function attachPopupListeners() {
     $('.pattern-box img').on('click', function () {
-        const imgSrc = $(this).attr('src'); // Get the source of the clicked image
-        $('#popup-image').attr('src', imgSrc); // Set the popup image source
-        $('#popup').removeClass('hidden'); // Show the popup
+        const thumbnailSrc = $(this).attr('src'); // e.g., ./motifs/0127/1.png
+
+        // Replace "motifs" with "pattern" in the path
+        const popupSrc = thumbnailSrc.replace('/motifs/', '/pattern/');
+
+        // Set and show the popup
+        $('#popup-image').attr('src', popupSrc);
+        $('#popup').removeClass('hidden');
     });
 
-    // Close popup when the close button is clicked
     $('#close-popup').on('click', function () {
-        $('#popup').addClass('hidden'); // Hide the popup
+        $('#popup').addClass('hidden');
     });
 
-    // Close popup when clicking outside the content
     $('#popup').on('click', function (e) {
         if ($(e.target).is('#popup')) {
-            $('#popup').addClass('hidden'); // Hide the popup
+            $('#popup').addClass('hidden');
         }
     });
+}
+
+$(document).ready(function () {
+    attachPopupListeners();
 });
 
 // mouse hover for dates
@@ -77,19 +103,27 @@ $(document).ready(function () {
     });
 });
 
-// $(document).ready(function () {
-//     // Randomize pattern-box order
-//     const randomizePatterns = () => {
-//         const patternGrid = $('.pattern-grid');
-//         const patterns = patternGrid.children('.pattern-box').toArray();
+// Randomize pattern-box order (optional)
+$(document).ready(function () {
+    function randomizePatterns() {
+        const patternGrid = $('.pattern-grid');
+        const patterns = patternGrid.children('.pattern-box').toArray();
 
-//         // Shuffle the patterns array
-//         patterns.sort(() => Math.random() - 0.5);
+        // Shuffle the patterns array
+        patterns.sort(() => Math.random() - 0.5);
 
-//         // Append the shuffled patterns back to the grid
-//         patternGrid.html(patterns);
-//     };
+        // Append the shuffled patterns back to the grid
+        patternGrid.html(patterns);
 
-//     // Call the randomize function on page load
-//     randomizePatterns();
-// });
+        // Reattach popup event listeners
+        attachPopupListeners();
+    }
+
+    // Call the randomize function on page load
+    randomizePatterns();
+});
+
+$(document).ready(function () {
+    randomizePatterns(); // Randomize the patterns on page load
+    attachPopupListeners(); // Attach popup listeners
+});
