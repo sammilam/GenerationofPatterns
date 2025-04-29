@@ -17,62 +17,61 @@
 <body>
     <!-- Customization Panel -->
     <div class="left">
-
         <div id="customization-panel">
-            <div class="rect"> </div> <!-- Divider -->
-            <!-- icon -->
+            <div class="rect"> </div>
+            <!-- icon logo -->
             <div class="icon">
                 <a href="index.html">
                     <img src="./img/favicon.png" alt="favicon">
                 </a>
             </div>
-            <!-- title -->
             <a href="index.html">
-                <h1 style="padding: 5%; "> Generation of Patterns</h1>
+                <h1 style="padding: 5%;"> Generation of Patterns</h1>
             </a>
-
             <div class="description">
-                <p> Drop an image and watch it transform into a pattern! <br><br> Scroll to zoom in or out.
-                </p> <br>
+                <h2> Welcome to the camera. </h2>
+                <p> Sketch out what kind of pattern you want to make! <br> Clear the canvas by pressing 'spacebar.'</p>
             </div>
-
             <!-- Generator -->
-            <a href="index.html">
+            <a href="./index.html">
                 <div class="bar">
                     <h2> <span> Pattern Generator </span></h2>
                 </div>
 
                 <!-- drawing board -->
-                <a href="draw.html">
+                <a href="./draw.html">
                     <div class="bar">
                         <h2> <span> Drawing Board </span></h2>
                     </div>
                 </a>
                 <!-- motif library -->
-                <a href="motif2.html">
+                <a href="./motif2.html">
                     <div class="bar">
                         <h2><span> Designed Motifs</span></h2>
                     </div>
                 </a>
 
                 <!-- blog -->
-                <a href="blog2.html">
+                <a href="./blog2.html">
                     <div class="bar">
                         <h2> <span> Pattern Blog </span></h2>
                     </div>
                 </a>
+                <div class="save-wrapper">
+                    <button id="save-button">Save Motif</button>
+                </div>
 
         </div>
 
+
     </div>
+
 
     <div class="containCam">
-
-        <div id="cam"></div>>
+        <h1> hello</h1>
+        <canvas id="cameraCanvas"></canvas> <!-- Canvas for the camera feed -->
         <button id="snapshotButton">Capture Snapshot</button>
-
     </div>
-
 
     <script src="./js/camera.js"></script>
 </body>

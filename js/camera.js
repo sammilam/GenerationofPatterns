@@ -1,41 +1,62 @@
 let video;
-let capturedImage;
+let snapshots = [];
+let counter = 0;
+let total;
+let isCapturing = true; // Flag to control capturing
 
 function setup() {
-    // Create a full-screen canvas
     createCanvas(windowWidth, windowHeight);
+    background(51);
 
-    // Initialize the video capture without audio
-    video = createCapture({
-        video: true,
-        audio: false, // Disable audio
-    });
-    video.size(640, 480);
+    // Initialize the video capture
+    video = createCapture(VIDEO);
+    video.size(320, 240);
     video.hide();
 
-    // Connect the HTML button to the captureSnapshot function
-    const snapshotButton = document.getElementById('snapshotButton');
-    snapshotButton.addEventListener('click', captureSnapshot);
+    // Create a button for capturing the snapshot
+    const button = select('#snapshotButton');
+    button.mousePressed(captureSnapshot);
 }
 
 function draw() {
-    background(255);
+    if (!isCapturing) return; // Stop updating the grid if capturing is disabled
 
-    // Display the video feed
-    image(video, (width - video.width) / 2, (height - video.height) / 2);
+    let w = 80; // Width of each snapshot cell
+    let h = 60; // Height of each snapshot cell
+    let x = 0; // Starting x position
+    let y = 0; // Starting y position
 
-    // Display the captured image if available
-    if (capturedImage) {
-        image(capturedImage, (width - capturedImage.width) / 2, (height - capturedImage.height) / 2);
+    // Calculate how many cells fit in the canvas
+    total = floor(width / w) * floor(height / h);
+
+    // Capture the current frame from the video feed
+    snapshots[counter] = video.get();
+    counter++;
+    if (counter == total) {
+        counter = 0; // Reset the counter when it reaches the total
+    }
+
+    // Display the snapshots in a grid
+    for (let i = 0; i < snapshots.length; i++) {
+        let index = (i + frameCount) % snapshots.length; // Cycle through snapshots
+        image(snapshots[index], x, y, w, h); // Draw the snapshot at the current grid position
+        x = x + w; // Move to the next column
+        if (x >= width) {
+            x = 0; // Reset to the first column
+            y = y + h; // Move to the next row
+        }
     }
 }
 
 function captureSnapshot() {
-    // Capture the current frame from the video feed
-    capturedImage = get();
+    // Stop capturing and freeze the current frame
+    isCapturing = false;
 
-    // Convert the captured image to a base64 string
-    const imageData = capturedImage.canvas.toDataURL('image/png');
+    // Capture the current canvas as an image
+    const canvasImage = canvas.toDataURL('image/png');
+
+    // Save the image locally
+    saveCanvas('snapshot', 'png'); // Save the canvas as a PNG file named "snapshot.png"
 
     // Send the image data to the PHP script
     fetch('save_image.php', {
@@ -43,13 +64,18 @@ function captureSnapshot() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ image: imageData }),
+        body: JSON.stringify({ image: canvasImage }),
     })
         .then(response => response.text())
         .then(data => {
-            console.log('Image saved:', data);
+            console.log('Canvas image saved on server:', data);
+            alert('Image saved successfully on the server!');
+            isCapturing = true; // Resume capturing after saving
         })
         .catch(error => {
-            console.error('Error saving image:', error);
+            console.error('Error saving canvas image on server:', error);
+            isCapturing = true; // Resume capturing even if there's an error
         });
 }
+
+// ref : https://www.youtube.com/watch?v=oLiaUEKsRws&ab_channel=TheCodingTrain
