@@ -1,12 +1,13 @@
 <?php
-$folders = ['img/*.png', 'motifs/*.png', 'sketch/*.png']; // Add your folders here
-$files = ['png', 'jpg', 'jpeg', 'gif']; // Add your file types here
+$folders = ['img', 'motifs', 'sketch']; // Add your folders here
+$fileTypes = ['png', 'jpg', 'jpeg', 'gif']; // Add your file types here
 $files = [];
-$files = array_merge($files, $folders);
 
 foreach ($folders as $folder) {
-    $files = array_merge($files, glob($folder));
+    foreach ($fileTypes as $type) {
+        $files = array_merge($files, glob("$folder/*.$type")); // Search for each file type
+    }
 }
 
-echo json_encode($files);
+echo json_encode($files); // Return the file paths as a JSON array
 ?>

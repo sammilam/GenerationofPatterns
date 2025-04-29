@@ -1,3 +1,14 @@
+fetch('get-images-script.php')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Loaded files:', data);
+    })
+    .catch(error => {
+        console.error('Error loading files:', error);
+    });
+
+
+
 src = "https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js" >
     $(document).ready(function () {
         console.log('jQuery is working!');
