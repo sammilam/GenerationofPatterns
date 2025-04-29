@@ -11,7 +11,9 @@ html {
     height: 100%;
 }
 
-
+.desc {
+    width: 45%;
+}
 
 /* motif2 */
 #motif-gallery {
