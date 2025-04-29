@@ -10,7 +10,7 @@ function setup() {
 
     // Initialize the video capture
     video = createCapture(VIDEO);
-    video.size(320, 240);
+    video.size(100, 100);
     video.hide();
 
     // Create a button for capturing the snapshot
@@ -21,13 +21,13 @@ function setup() {
 function draw() {
     if (!isCapturing) return; // Stop updating the grid if capturing is disabled
 
-    let w = 80; // Width of each snapshot cell
-    let h = 60; // Height of each snapshot cell
+    let w = windowWidth / 8; // Width of each snapshot cell
+    let h = windowHeight / 4; // Height of each snapshot cell
     let x = 0; // Starting x position
     let y = 0; // Starting y position
 
     // Calculate how many cells fit in the canvas
-    total = floor(width / w) * floor(height / h);
+    total = floor(windowWidth / w) * floor(windowHeight / h);
 
     // Capture the current frame from the video feed
     snapshots[counter] = video.get();
