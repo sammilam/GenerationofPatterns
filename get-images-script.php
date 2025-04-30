@@ -1,5 +1,5 @@
 <?php
-$folders = ['img', 'motifs', 'sketch']; // Add your folders here
+$folders = ['img', 'motifs', 'sketch', 'pattern']; // Add your folders here
 $fileTypes = ['png', 'jpg', 'jpeg', 'gif']; // Add your file types here
 $files = [];
 
