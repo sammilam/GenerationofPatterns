@@ -3,6 +3,8 @@ $folders = ['img', 'motifs', 'sketch', 'pattern']; // Add your folders here
 $fileTypes = ['png', 'PNG', 'jpg', 'jpeg', 'JPG']; // Add your file types here
 $files = [];
 
+header('Access-Control-Allow-Origin: *');
+
 foreach ($folders as $folder) {
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folder));
     foreach ($iterator as $file) {
