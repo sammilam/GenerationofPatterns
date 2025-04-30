@@ -69,7 +69,7 @@ function captureSnapshot() {
         .then(response => response.text())
         .then(data => {
             console.log('Canvas image saved on server:', data);
-            alert('Image saved successfully on the server!');
+            alert('Image saved successfully on the Public Gallery!');
             isCapturing = true; // Resume capturing after saving
         })
         .catch(error => {
