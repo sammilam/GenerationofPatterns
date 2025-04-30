@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+
+
+
+    <link rel="stylesheet" href="https://use.typekit.net/ywv6eyk.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <!-- Customization Panel -->
+        <div class="left">
+
+            <div id="customization-panel">
+                <div class="rect"> </div> <!-- Divider -->
+                <!-- icon -->
+                <div class="icon">
+                    <a href="index.html">
+                        <img src="./img/favicon.png" alt="favicon">
+                    </a>
+                </div>
+                <!-- title -->
+                <a href="index.html">
+                    <h1 style="padding: 5%; "> Generation of Patterns</h1>
+                </a>
+
+                <div class="description">
+                    <p> GradEx 110 public pattern library
+                </div>
+
+                <!-- Generator -->
+                <a href="index.html">
+                    <div class="bar">
+                        <h2> <span> Pattern Generator </span></h2>
+                    </div>
+
+                    <!-- drawing board -->
+                    <a href="draw.html">
+                        <div class="bar">
+                            <h2> <span> Drawing Board </span></h2>
+                        </div>
+                    </a>
+
+                    <!-- camera -->
+                    <a href="cam.html">
+                        <div class="bar">
+                            <h2> <span> Camera </span></h2>
+                        </div>
+                    </a>
+
+                    <!-- motif library -->
+                    <a href="motif2.html">
+                        <div class="bar">
+                            <h2><span> Designed Motifs</span></h2>
+                        </div>
+                    </a>
+
+                    <!-- blog -->
+                    <a href="blog2.html">
+                        <div class="bar">
+                            <h2> <span> Pattern Blog </span></h2>
+                        </div>
+                    </a>
+                    <!-- check testing -->
+                    <a href="public.html">
+                        <div class="bar">
+                            <h2> <span> Public Gallery </span></h2>
+                        </div>
+                    </a>
+                    <div class="save-wrapper">
+                        <button id="save-button">Save Pattern</button>
+                    </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="gallery"></div>
+    </main>
+    <script src="sketch.js"></script>
+    <script>
+
+
+        let currentImages = new Set(); // store the image paths
+
+
+        function updateGallery() {
+            // runs the PHP script
+            $.getJSON("get-images-script.php")
+                .done(function (images) {
+                    // loop through each image in the folder
+                    images.forEach(imgPath => {
+                        // only get image path from images that aren't displayed yet
+                        if (!currentImages.has(imgPath)) {
+                            // prepend, meaning latest image gets added to the beginning of gallery
+                            $('#gallery').prepend(`<img src="${imgPath}" width="100">`);
+                            currentImages.add(imgPath);
+                        }
+                    });
+                })
+                // fail function. Could display an error message on front end instead of logging only to console
+                .fail(function (jqxhr, textStatus, error) {
+                    console.error("Request Failed:", textStatus, error);
+                });
+        }
+
+
+        // display images from tiles folder
+        updateGallery();
+
+        // checks every 5 seconds to see if there's a new file in folder
+        setInterval(updateGallery, 5000); // change the number value to decrease or increase time. 
+
+    </script>
+</body>
+
+</html>
