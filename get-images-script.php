@@ -1,11 +1,17 @@
 <?php
 $folders = ['img', 'motifs', 'sketch', 'pattern']; // Add your folders here
-$fileTypes = ['png', 'jpg', 'jpeg', 'gif']; // Add your file types here
+$fileTypes = ['png', 'PNG', 'jpg', 'jpeg', 'JPG']; // Add your file types here
 $files = [];
 
 foreach ($folders as $folder) {
-    foreach ($fileTypes as $type) {
-        $files = array_merge($files, glob("$folder/*.$type")); // Search for each file type
+    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folder));
+    foreach ($iterator as $file) {
+        if ($file->isFile()) {
+            $extension = strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION));
+            if (in_array($extension, $fileTypes)) {
+                $files[] = $file->getPathname(); // Add the full path of the file
+            }
+        }
     }
 }
 
