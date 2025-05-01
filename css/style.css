@@ -50,7 +50,7 @@ h2 {
 p {
     font-family: "darkmode-on", sans-serif;
     font-weight: 400;
-    font-size: clamp(12pt, 1.4vw, 14px);
+    font-size: clamp(12pt, 2vw, 14px);
     font-style: normal;
 }
 
