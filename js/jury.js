@@ -1,36 +1,34 @@
-// Global variables
 let playing = false;
 let video;
 let button;
 
 function setup() {
-    // Remove the canvas
     noCanvas();
 
-    // Create and style the video
-    video = createVideo(['./video/web.mp4'], () => {
+    // Load video
+    video = createVideo(['/video/fingers.mov', './video/demo.MOV'], () => {
         console.log('Video loaded successfully');
-        video.volume(0); // Mute the video
-        video.loop(); // Start looping the video
-        video.play(); // Play the video
     });
-    styleVideo();
 
-    // Add a mousePressed event to toggle play/pause
+    // Set video size and position
+    video.size(1000, 1000); // Adjust the size of the video
+    video.position(windowWidth / 4, 100); // Position the video on the screen
+
+    // Add a mousePressed event to the video to toggle play/pause
     video.mousePressed(toggleVid);
 
-    // Create and style the play/pause button
+    // Add cursor styling to the video
+    video.style('cursor', 'pointer'); // Change cursor to hand when hovering over the video
+
+    // Create play/pause button
     button = createButton('play');
     button.mousePressed(toggleVid);
-}
 
-function styleVideo() {
-    video.size(1280, 720); // Set video size
-    video.position(0, 0); // Set video position
-    video.style('z-index', '-1'); // Send video to the background
-    video.style('position', 'absolute'); // Absolute positioning
-    video.style('top', '15%'); // Center vertically
-    video.style('left', '25%'); // Center horizontally
+    // Add cursor styling to the button
+    button.style('cursor', 'pointer'); // Change cursor to hand when hovering over the button
+
+    // Position the button right beside the video
+    button.position(video.x + video.width + 10, video.y + (video.height / 2) - 15); // Adjust for alignment
 }
 
 function toggleVid() {
