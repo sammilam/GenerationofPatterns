@@ -6,8 +6,11 @@ function setup() {
     noCanvas();
 
     // Load video
-    video = createVideo(['/video/fingers.mov', './video/demo.MOV'], () => {
+    video = createVideo(['https://generationofpatterns.com/video/web.mp4'], () => {
         console.log('Video loaded successfully');
+        video.volume(0); // Mute the video
+        video.loop(); // Start looping the video
+        video.play(); // Play the video
     });
 
     // Set video size and position
