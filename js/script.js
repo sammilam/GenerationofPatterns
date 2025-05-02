@@ -88,7 +88,7 @@ function saveWithButton() {
         return;
     }
 
-    const resolutionMultiplier = 9; // fixed multiplier
+    const resolutionMultiplier = 7; // fixed multiplier
 
     const zoomedWidth = canvas.width * resolutionMultiplier;
     const zoomedHeight = canvas.height * resolutionMultiplier;
