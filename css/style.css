@@ -378,6 +378,9 @@ a {
     /* Prevent text overflow */
 }
 
+.phot {
+    width: 50%;
+}
 
 
 /* text animation */
