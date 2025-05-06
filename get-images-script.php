@@ -1,17 +1,24 @@
 <?php
-$folders = ['snapshots']; // Add your folders here
-$fileTypes = ['png', 'PNG', 'jpg', 'jpeg', 'JPG']; // Add your file types here
+$folders = [__DIR__ . '/snapshots']; // Use absolute path for reliability
+$fileTypes = ['png', 'jpg', 'jpeg']; // Add your file types here (case-insensitive)
 $files = [];
 
-header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json'); // Set content type to JSON
+header('Access-Control-Allow-Origin: *'); // Allow cross-origin requests
 
 foreach ($folders as $folder) {
+    if (!is_dir($folder)) {
+        echo json_encode(['error' => "Folder '$folder' does not exist."]);
+        exit;
+    }
+
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folder));
     foreach ($iterator as $file) {
         if ($file->isFile()) {
             $extension = strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION));
             if (in_array($extension, $fileTypes)) {
-                $files[] = $file->getPathname(); // Add the full path of the file
+                // Convert to relative URL
+                $files[] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $file->getPathname());
             }
         }
     }
