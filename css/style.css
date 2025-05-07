@@ -288,36 +288,12 @@ a {
 
 /* public Gallery */
 
+
 #gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    justify-content: flex-start;
-    /* align items to the left */
-}
-
-#gallery img {
-    width: 100px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-#gallery-container {
-    max-height: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
 }
-
 
 /* about me */
 .container {
