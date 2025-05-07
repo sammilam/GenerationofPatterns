@@ -90,11 +90,6 @@ p {
     z-index: 5;
 }
 
-#drop-zone.dragover {
-    border-color: blue;
-    /* Highlight the drop zone when dragging over */
-}
-
 /* Customization Panel */
 
 .icon {
@@ -244,6 +239,12 @@ a {
     /* Remove margin to avoid offset */
 }
 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
 .image-item img {
     width: 100%;
     height: auto;
@@ -294,6 +295,7 @@ a {
     border: 1px solid #ccc;
     padding: 10px;
 }
+
 
 /* about me */
 .container {
