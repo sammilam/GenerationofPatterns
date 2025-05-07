@@ -65,6 +65,7 @@ p {
 
 /* Canvas (Main Pattern Area) */
 #pattern-canvas {
+    display: block;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -87,6 +88,11 @@ p {
     transform: translate(-50%, -50%);
     background-color: #fff;
     z-index: 5;
+}
+
+#drop-zone.dragover {
+    border-color: blue;
+    /* Highlight the drop zone when dragging over */
 }
 
 /* Customization Panel */

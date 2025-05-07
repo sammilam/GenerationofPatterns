@@ -1,134 +1,134 @@
-const dropZone = document.getElementById('drop-zone');
-const canvas = document.getElementById('pattern-canvas');
-const ctx = canvas.getContext('2d');
+$(document).ready(function () {
+    const $dropZone = $('#drop-zone');
+    const $canvas = $('#pattern-canvas');
+    const ctx = $canvas[0].getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    $canvas[0].width = window.innerWidth;
+    $canvas[0].height = window.innerHeight;
 
-let img = null; // Holds the uploaded image
-let imgSize = 100; // Initial size of the image
+    let img = null; // Holds the uploaded image
+    let imgSize = 100; // Starting tile size in pixels (adjust as needed)
 
-// Drag and Drop functionality
-dropZone.addEventListener('dragover', (event) => {
-    event.preventDefault();
-    dropZone.style.borderColor = 'blue';
-});
+    // Drag and Drop functionality
+    $dropZone.on('dragover', (e) => {
+        e.preventDefault();
+        $dropZone.addClass('dragover'); // Add a class to style the drop zone
+    });
 
-dropZone.addEventListener('dragleave', () => {
-    dropZone.style.borderColor = '#ccc';
-});
+    $dropZone.on('dragleave', () => {
+        $dropZone.removeClass('dragover'); // Remove the class when dragging leaves
+    });
 
+    $dropZone.on('drop', (e) => {
+        e.preventDefault();
+        $dropZone.removeClass('dragover'); // Remove the class when the image is dropped
 
-// when dropping the image
-dropZone.addEventListener('drop', (event) => {
-    event.preventDefault();
-    const file = event.dataTransfer.files[0];
-    if (file && file.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = () => {
-            img = new Image();
-            img.src = reader.result;
-            img.onload = drawPattern;
-        };
-        reader.readAsDataURL(file);
-    }
-    dropZone.style.borderColor = '#ccc';
-});
+        const file = e.originalEvent.dataTransfer.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                img = new Image();
+                img.src = reader.result;
+                img.onload = drawPattern;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert('Please drop a valid image file.');
+        }
+    });
 
-// Scroll event to resize image
-window.addEventListener('wheel', (event) => {
-    if (!img) return; // Do nothing if no image is uploaded
+    // Scroll event to resize image
+    $(window).on('wheel', (e) => {
+        if (!img) return; // Do nothing if no image is loaded
 
-    // Adjust image size based on scroll direction
-    const scaleAmount = 10;
-    if (event.deltaY < 0) {
-        imgSize += scaleAmount; // Scroll up: Increase size
-    } else {
-        imgSize = Math.max(scaleAmount, imgSize - scaleAmount); // Scroll down: Decrease size (minimum size: 10px)
-    }
+        const scaleAmount = 10; // Amount to scale the image per scroll
+        if (e.originalEvent.deltaY < 0) {
+            // Scrolling up: Increase size
+            imgSize += scaleAmount;
+        } else {
+            // Scrolling down: Decrease size, but ensure it doesn't go below a minimum size
+            imgSize = Math.max(10, Math.min(1000, imgSize - scaleAmount));
+        }
 
-    drawPattern();
-});
+        drawPattern(); // Redraw the pattern with the updated size
+    });
 
-// Key event for screenshot
-window.addEventListener('keydown', (event) => {
-    if (event.key.toLowerCase() === 's') {
-        takeScreenshot();
-    }
-});
+    // Key event for screenshot
+    $(window).on('keydown', (e) => {
+        if (e.key.toLowerCase() === 's') {
+            saveWithButton();
+        }
+    });
 
-// Draw the pattern
-function drawPattern() {
-    if (!img) return;
+    // Draw the pattern
+    function drawPattern() {
+        if (!img) return;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-    const patternCanvas = document.createElement('canvas');
-    const patternCtx = patternCanvas.getContext('2d');
-
-    // Set the pattern canvas size to the adjusted image size
-    patternCanvas.width = imgSize;
-    patternCanvas.height = imgSize;
-
-    // Draw the image onto the pattern canvas
-    patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
-
-    // Create the pattern and fill the main canvas
-    const pattern = ctx.createPattern(patternCanvas, 'repeat');
-    ctx.fillStyle = pattern;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
-
-
-// uses button to save the pattern
-function saveWithButton() {
-    const filename = prompt("Enter a name for your file:", "pattern");
-
-    if (!filename) {
-        alert("Save canceled.");
-        return;
-    }
-
-    const resolutionMultiplier = 7; // fixed multiplier
-
-    const zoomedWidth = canvas.width * resolutionMultiplier;
-    const zoomedHeight = canvas.height * resolutionMultiplier;
-
-    const exportCanvas = document.createElement('canvas');
-    const exportCtx = exportCanvas.getContext('2d');
-
-    exportCanvas.width = zoomedWidth;
-    exportCanvas.height = zoomedHeight;
-
-    // White background
-    exportCtx.fillStyle = "white";
-    exportCtx.fillRect(0, 0, zoomedWidth, zoomedHeight);
-
-    exportCtx.imageSmoothingEnabled = false;
-    exportCtx.setTransform(resolutionMultiplier, 0, 0, resolutionMultiplier, 0, 0);
-
-    if (img) {
+        ctx.clearRect(0, 0, $canvas[0].width, $canvas[0].height); // Clear canvas
         const patternCanvas = document.createElement('canvas');
         const patternCtx = patternCanvas.getContext('2d');
 
+        // Set the pattern canvas size to the adjusted image size
+        patternCanvas.width = img.width;
+        patternCanvas.height = img.height;
+
+        // Draw the image onto the pattern canvas
         patternCanvas.width = imgSize;
         patternCanvas.height = imgSize;
         patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
 
-        const pattern = exportCtx.createPattern(patternCanvas, 'repeat');
-        exportCtx.fillStyle = pattern;
-        exportCtx.fillRect(0, 0, canvas.width, canvas.height);
+        // Create the pattern and fill the main canvas
+        const pattern = ctx.createPattern(patternCanvas, 'repeat');
+        ctx.fillStyle = pattern;
+        ctx.fillRect(0, 0, $canvas[0].width, $canvas[0].height);
     }
 
-    const link = document.createElement('a');
-    link.download = `${filename}.png`;
-    link.href = exportCanvas.toDataURL('image/png');
-    link.click();
-}
+    // uses button to save the pattern
+    function saveWithButton() {
+        const filename = prompt("Enter a name for your file:", "pattern");
 
-document.getElementById("save-button").addEventListener("click", saveWithButton);
+        if (!filename) {
+            alert("Save canceled.");
+            return;
+        }
 
-window.addEventListener("keydown", (event) => {
-    if (event.key.toLowerCase() === "s") {
-        saveWithButton();
+        const resolutionMultiplier = 7; // fixed multiplier
+
+        const zoomedWidth = $canvas[0].width * resolutionMultiplier;
+        const zoomedHeight = $canvas[0].height * resolutionMultiplier;
+
+        const exportCanvas = document.createElement('canvas');
+        const exportCtx = exportCanvas.getContext('2d');
+
+        exportCanvas.width = zoomedWidth;
+        exportCanvas.height = zoomedHeight;
+
+        // White background
+        exportCtx.fillStyle = "white";
+        exportCtx.fillRect(0, 0, zoomedWidth, zoomedHeight);
+
+        exportCtx.imageSmoothingEnabled = false;
+        exportCtx.setTransform(resolutionMultiplier, 0, 0, resolutionMultiplier, 0, 0);
+
+        if (img) {
+            const patternCanvas = document.createElement('canvas');
+            const patternCtx = patternCanvas.getContext('2d');
+
+            patternCanvas.width = imgSize;
+            patternCanvas.height = imgSize;
+            patternCtx.drawImage(img, 0, 0, imgSize, imgSize);
+
+
+            const pattern = exportCtx.createPattern(patternCanvas, 'repeat');
+            exportCtx.fillStyle = pattern;
+            exportCtx.fillRect(0, 0, $canvas[0].width, $canvas[0].height);
+        }
+
+        const link = document.createElement('a');
+        link.download = `${filename}.png`;
+        link.href = exportCanvas.toDataURL('image/png');
+        link.click();
     }
+
+
 });
