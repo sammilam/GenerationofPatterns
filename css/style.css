@@ -238,12 +238,6 @@ a {
     /* Remove margin to avoid offset */
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
 .image-item img {
     width: 100%;
     height: auto;
@@ -285,6 +279,7 @@ a {
     background-color: #5a2ecb;
     /* Add hover effect */
 }
+
 /* public Gallery */
 
 #gallery {
@@ -292,30 +287,31 @@ a {
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
-    justify-content: flex-start; /* align items to the left */
-  }
-  
-  #gallery img {
+    justify-content: flex-start;
+    /* align items to the left */
+}
+
+#gallery img {
     width: 100px;
     height: auto;
     object-fit: cover;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  #gallery img:hover {
+}
+
+#gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  #gallery-container {
+#gallery-container {
     max-height: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-  }
-  
+}
+
 
 /* about me */
 .container {
